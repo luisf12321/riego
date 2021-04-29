@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from riego import views as local_view
+from usuario import views as usuario_view
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('hello/', local_view.hello_world),
+    path('hi/', local_view.hi),
+    path('hi2/', local_view.hi2),
+    path('hi3/<str:nombre>/<int:edad>/', local_view.hi3),
+    path("usuario/", usuario_view.list_usuario),
+    path("user/", usuario_view.usuarios),
 ]
