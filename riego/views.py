@@ -1,5 +1,6 @@
 import json
 
+from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
 
@@ -31,9 +32,13 @@ def hi2(request):
     return HttpResponse(json.dumps(data), content_type="application/json")
 
 
-def hi3(request,nombre,edad):
-    if edad<12:
+def hi3(request, nombre, edad):
+    if edad < 12:
         message = "sorry {}".format(nombre)
     else:
         message = "hello {}".format(nombre)
     return HttpResponse(message)
+
+
+def index(request):
+    return render(request, "index.html")

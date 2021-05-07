@@ -24,5 +24,9 @@ urlpatterns = [
     path('hi2/', local_view.hi2),
     path('hi3/<str:nombre>/<int:edad>/', local_view.hi3),
     path("usuario/", usuario_view.list_usuario),
-    path("user/", usuario_view.usuarios),
+    path("user/", usuario_view.usuarios, name="usuario"),
+    path("", local_view.index),
+    path("login", usuario_view.login_view, name="login"),
+    path("registro", usuario_view.registro, name="registro"),
+    path("logout", usuario_view.logout_view, name='logout')
 ]
