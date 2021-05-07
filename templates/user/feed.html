@@ -1,21 +1,9 @@
-{%  extends "base.html" %}
+{%  extends "user/base.html" %}
 {% block head_content %}
 <title>Usuario</title>
 {% endblock %}
 {% block container %}
-        <div class="row">
-            {% for usuario in usuarios %}
-            <div class="col-lg-4 offset-lg-4">
-                <div class="media">
-                    <img class="mr-3 rounded-circle" src="{{ usuario.foto }}" alt="{{ usuario.monbre }}" style="width:60px;">
-                    <div class="media-body">
-                        <h5 class="mt-0">{{ usuario.nombre }} </h5>
-                        {{ usuario.time }}
-                    </div>
-                </div>
-                <img class="img-fluid mt-3 border rounded" src="{{ usuario.foto }}">
-                <h6 class="ml-1 mt-1">{{ usuario.nombre }}</h6>
-            </div>
-            {% endfor %}
-        </div>
+    <div class="row mt-5 mb-2">
+
+    </div>
 {% endblock %}
