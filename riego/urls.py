@@ -17,16 +17,23 @@ from django.contrib import admin
 from django.urls import path
 from riego import views as local_view
 from usuario import views as usuario_view
+from riegoapp import views as riegoapp_view
+
 
 urlpatterns = [
-    path('hello/', local_view.hello_world),
-    path('hi/', local_view.hi),
-    path('hi2/', local_view.hi2),
-    path('hi3/<str:nombre>/<int:edad>/', local_view.hi3),
-    path("usuario/", usuario_view.list_usuario),
-    path("user/", usuario_view.usuarios, name="usuario"),
+    #local views riego
     path("", local_view.index),
+    path("setting",local_view.setting_count, name="setting"),
+
+    #usuarios views usuarios
+    path("user/", usuario_view.usuarios, name="usuario"),
     path("login", usuario_view.login_view, name="login"),
     path("registro", usuario_view.registro, name="registro"),
-    path("logout", usuario_view.logout_view, name='logout')
+    path("logout", usuario_view.logout_view, name='logout'),
+    path("perfil", usuario_view.perfil, name="perfil"),
+
+    #riego views riegoapp
+    path("estadisticas", riegoapp_view.estadisticas, name="estadisticas"),
+    path("calendario",riegoapp_view.calendario, name="calendario"),
+    path("sectores", riegoapp_view.sectores, name="sectores"),
 ]
